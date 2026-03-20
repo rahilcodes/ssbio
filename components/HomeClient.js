@@ -33,7 +33,10 @@ export default function HomeClient({ categories }) {
       <section className="hero">
         <div className="hero-inner container">
           <div className="hero-pill">
-            ✦ Authorised Middleby Celfrost Partner · Hyderabad
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '6px', color: 'var(--gold)' }}>
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+            Authorised Celfrost Partner · Hyderabad
           </div>
           <h1>Professional Equipment for <em>World-Class Kitchens</em></h1>
           <p>Toastmaster Bakery &amp; Catering + Celfrost Kitchen Refrigeration — complete solutions for restaurants, hotels, QSRs and bakeries across Telangana &amp; AP.</p>
@@ -114,22 +117,51 @@ export default function HomeClient({ categories }) {
         <div className="container">
           <div className="trust-grid">
             <div className="trust-item">
-              <div className="trust-icon">🏆</div>
+              <div className="trust-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                  <path d="M4 22h16"></path>
+                  <path d="M10 14.66V17c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-2.34"></path>
+                  <path d="M4.68 14.68c-.28-.58-.45-1.22-.52-1.9a13.9 13.9 0 0 1 0-7.56"></path>
+                  <path d="M19.32 14.68c.28-.58.45-1.22.52-1.9a13.9 13.9 0 0 0 0-7.56"></path>
+                  <path d="M15 11c0 4.14-3 7-7 7s-7-2.86-7-7"></path>
+                  <path d="M8 21v-2h8v2"></path>
+                  <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+                </svg>
+              </div>
               <h4>ISO 9001:2000</h4>
               <p>Quality certified for industrial-grade kitchen equipment standards.</p>
             </div>
             <div className="trust-item">
-              <div className="trust-icon">⚡</div>
+              <div className="trust-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                </svg>
+              </div>
               <h4>24hr Service Support</h4>
               <p>Round-the-clock technical support and emergency maintenance.</p>
             </div>
             <div className="trust-item">
-              <div className="trust-icon">🤝</div>
+              <div className="trust-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
               <h4>Authorised Partner</h4>
-              <p>Official Middleby Celfrost partner for Telangana &amp; AP region.</p>
+              <p>Official Celfrost partner for Telangana &amp; AP region.</p>
             </div>
             <div className="trust-item">
-              <div className="trust-icon">📦</div>
+              <div className="trust-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+                  <path d="m3.3 7 8.7 5 8.7-5"></path>
+                  <path d="M12 22V12"></path>
+                </svg>
+              </div>
               <h4>158+ Products</h4>
               <p>Complete range from refrigeration to cooking and food service.</p>
             </div>
@@ -144,8 +176,18 @@ export default function HomeClient({ categories }) {
             <h2>Ready to outfit your kitchen?</h2>
             <p>Our Hyderabad experts will create a personalized equipment plan and competitive quote within 24 hours.</p>
             <div className="cta-btns">
-              <a href="tel:+919849461986" className="btn-gold">📞 Call +91 98494 61986</a>
-              <a href="https://wa.me/919849461986" target="_blank" rel="noopener noreferrer" className="btn-whatsapp">💬 WhatsApp Us</a>
+              <a href="tel:+919849461986" className="btn-gold">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}>
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Call +91 98494 61986
+              </a>
+              <a href="https://wa.me/919849461986" target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}>
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-10.6 8.38 8.38 0 0 1 3.8.9L21 3.5Z"></path>
+                </svg>
+                WhatsApp Us
+              </a>
             </div>
           </div>
         </div>

@@ -18,13 +18,17 @@ export default function ContactPage() {
             {/* Left: Info */}
             <div className="contact-info-col">
               <div className="contact-card">
-                <div className="contact-card-icon">📞</div>
+                <div className="contact-card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
                 <h3>Call Us</h3>
                 <p>Talk to our equipment specialists directly.</p>
                 <a href="tel:+919849461986" className="contact-link">+91 98494 61986</a>
               </div>
               <div className="contact-card">
-                <div className="contact-card-icon">💬</div>
+                <div className="contact-card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-10.6 8.38 8.38 0 0 1 3.8.9L21 3.5Z"></path></svg>
+                </div>
                 <h3>WhatsApp</h3>
                 <p>Send us a message for quick responses and product enquiries.</p>
                 <a
@@ -37,13 +41,17 @@ export default function ContactPage() {
                 </a>
               </div>
               <div className="contact-card">
-                <div className="contact-card-icon">✉️</div>
+                <div className="contact-card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                </div>
                 <h3>Email</h3>
                 <p>Send us your requirements and we'll respond within 24 hours.</p>
                 <a href="mailto:info@ssbiosolutions.com" className="contact-link">info@ssbiosolutions.com</a>
               </div>
               <div className="contact-card">
-                <div className="contact-card-icon">📍</div>
+                <div className="contact-card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
                 <h3>Visit Our Showroom</h3>
                 <p>See our equipment range in person at our Hyderabad showroom.</p>
                 <p className="contact-address">Hyderabad, Telangana, India<br />Serving Telangana &amp; Andhra Pradesh</p>
@@ -88,9 +96,12 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-whatsapp"
-                    style={{ display: 'block', textAlign: 'center', width: '100%' }}
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}
                   >
-                    💬 Send via WhatsApp
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}>
+                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-10.6 8.38 8.38 0 0 1 3.8.9L21 3.5Z"></path>
+                    </svg>
+                    Send via WhatsApp
                   </a>
                   <p style={{ textAlign: 'center', color: '#aaa', fontSize: '0.78rem', marginTop: '0.75rem' }}>
                     Or call us directly at <a href="tel:+919849461986" style={{ color: 'var(--gold)' }}>+91 98494 61986</a>
@@ -107,22 +118,30 @@ export default function ContactPage() {
         <div className="container">
           <div className="hours-grid">
             <div style={{ textAlign: 'center', color: 'white' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🕐</div>
+              <div style={{ color: 'var(--gold)', marginBottom: '0.75rem', display: 'flex', justifyContent: 'center' }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
               <h4 style={{ color: 'white', fontFamily: 'Inter,sans-serif', marginBottom: '0.5rem' }}>Monday – Saturday</h4>
               <p style={{ color: '#666' }}>9:00 AM – 7:00 PM</p>
             </div>
             <div style={{ textAlign: 'center', color: 'white' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>📞</div>
+              <div style={{ color: 'var(--gold)', marginBottom: '0.75rem', display: 'flex', justifyContent: 'center' }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
               <h4 style={{ color: 'white', fontFamily: 'Inter,sans-serif', marginBottom: '0.5rem' }}>Emergency Support</h4>
               <p style={{ color: '#666' }}>24 hours, 7 days a week</p>
             </div>
             <div style={{ textAlign: 'center', color: 'white' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🚚</div>
+              <div style={{ color: 'var(--gold)', marginBottom: '0.75rem', display: 'flex', justifyContent: 'center' }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              </div>
               <h4 style={{ color: 'white', fontFamily: 'Inter,sans-serif', marginBottom: '0.5rem' }}>Service Coverage</h4>
               <p style={{ color: '#666' }}>Telangana &amp; Andhra Pradesh</p>
             </div>
             <div style={{ textAlign: 'center', color: 'white' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>⚡</div>
+              <div style={{ color: 'var(--gold)', marginBottom: '0.75rem', display: 'flex', justifyContent: 'center' }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+              </div>
               <h4 style={{ color: 'white', fontFamily: 'Inter,sans-serif', marginBottom: '0.5rem' }}>Quote Response</h4>
               <p style={{ color: '#666' }}>Within 2 business hours</p>
             </div>

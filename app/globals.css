@@ -2246,6 +2246,7 @@ header {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  color: white !important;
 }
 
 .pd-cta-desc {
@@ -2525,21 +2526,39 @@ header {
   .catalog-hero h1 { font-size: 1.6rem !important; }
   .catalog-layout { grid-template-columns: 1fr !important; padding-top: 1.25rem !important; padding-bottom: 3rem !important; }
   
-  .catalog-toolbar { flex-direction: column; align-items: stretch !important; gap: 1rem; }
-  .toolbar-actions { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .catalog-toolbar { 
+    flex-direction: column; 
+    align-items: stretch !important; 
+    gap: 1.25rem;
+    background: white;
+    padding: 1.25rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid var(--border);
+  }
   
+  .toolbar-actions { 
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center; 
+    gap: 1rem; 
+  }
+  
+  .view-toggles { display: none !important; }
+
   .mob-filter-toggle {
     display: flex !important;
     align-items: center;
-    gap: 0.6rem;
-    padding: 10px 16px;
-    background: #f0f0f0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #333;
-    transition: all 0.2s;
+    gap: 0.75rem;
+    padding: 12px 20px;
+    background: var(--dark-bg);
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 12px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: white;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
   }
   .mob-filter-toggle .count {
     background: var(--gold);

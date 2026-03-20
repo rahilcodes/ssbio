@@ -39,7 +39,12 @@ function ProductCard({ product }) {
             />
           ) : (
             <div className="pcard-placeholder">
-              <span className="pcard-placeholder-icon">⚙️</span>
+              <div className="pcard-placeholder-icon">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.3 }}>
+                  <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16v-8Z"></path>
+                  <path d="M12 12V4"></path>
+                </svg>
+              </div>
               <small style={{ color: bStyle.text }}>{(title || '').toUpperCase()}</small>
             </div>
           )}
@@ -218,7 +223,18 @@ export default function CatalogClient({ initialProducts, categories, brands }) {
             
             <div className="toolbar-actions">
               <button className="mob-filter-toggle" onClick={() => setShowMobileFilters(true)}>
-                <span className="icon">⚙️</span> Filters
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="4" y1="21" x2="4" y2="14"></line>
+                  <line x1="4" y1="10" x2="4" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12" y2="3"></line>
+                  <line x1="20" y1="21" x2="20" y2="16"></line>
+                  <line x1="20" y1="12" x2="20" y2="3"></line>
+                  <line x1="1" y1="14" x2="7" y2="14"></line>
+                  <line x1="9" y1="8" x2="15" y2="8"></line>
+                  <line x1="17" y1="16" x2="23" y2="16"></line>
+                </svg>
+                Filters
                 {activeFilters > 0 && <span className="count">{activeFilters}</span>}
               </button>
 
@@ -231,7 +247,12 @@ export default function CatalogClient({ initialProducts, categories, brands }) {
 
           {filteredProducts.length === 0 ? (
             <div className="catalog-empty">
-              <div className="empty-icon">🔍</div>
+              <div className="empty-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.5 }}>
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </svg>
+              </div>
               <h3>No products found</h3>
               <p>Try adjusting your filters or search query.</p>
               <button className="btn-gold" onClick={clearAll}>Clear All Filters</button>
