@@ -46,10 +46,6 @@ export default function Header() {
         </nav>
 
         <div className="header-right">
-          <div className="contact-info">
-             Call for Enquiry
-             <strong>+91 98494 61986</strong>
-          </div>
           <Link href="/products" className="btn-gold">Request Quote</Link>
           
           <button 

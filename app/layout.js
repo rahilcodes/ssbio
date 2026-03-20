@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
           {/* Announcement bar */}
           <div className="topbar">
             <div className="container topbar-inner">
-              <span>🏆 ISO 9001:2000 Certified · Authorised Middleby Celfrost Partner</span>
+              <span className="topbar-left">🏆 ISO 9001:2000 Certified · Authorised Middleby Celfrost Partner</span>
               <span className="topbar-right">
                 <a href="tel:+919849461986">📞 +91 98494 61986</a>
                 <span className="topbar-divider">|</span>
