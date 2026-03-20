@@ -1,12 +1,21 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useSearch } from "@/context/SearchContext";
 
 export default function Header() {
   const pathname = usePathname();
+  const router = useRouter();
+  const { searchQuery, setSearchQuery } = useSearch();
   const [isMobMenuOpen, setIsMobMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [localSearch, setLocalSearch] = useState('');
+
+  // Sych local search with context
+  useEffect(() => {
+    setLocalSearch(searchQuery);
+  }, [searchQuery]);
 
   // Close menu on route change
   useEffect(() => {
@@ -17,7 +26,17 @@ export default function Header() {
   const toggleMenu = () => {
     const nextState = !isMobMenuOpen;
     setIsMobMenuOpen(nextState);
+    if (nextState) setIsSearchOpen(false); // Close search if menu opens
     document.body.style.overflow = nextState ? 'hidden' : '';
+  };
+
+  const handleSearchSubmit = (e) => {
+    if (e) e.preventDefault();
+    setSearchQuery(localSearch);
+    if (pathname !== '/products') {
+      router.push('/products');
+    }
+    setIsSearchOpen(false);
   };
 
   return (
@@ -46,7 +65,31 @@ export default function Header() {
         </nav>
 
         <div className="header-right">
-          <Link href="/products" className="btn-gold">Request Quote</Link>
+          {/* Desktop Search */}
+          <div className={`header-search-wrap ${isSearchOpen ? 'active' : ''}`}>
+            <form onSubmit={handleSearchSubmit}>
+              <input 
+                type="text" 
+                placeholder="Search equipment..."
+                value={localSearch}
+                onChange={(e) => setLocalSearch(e.target.value)}
+                onBlur={() => !localSearch && setIsSearchOpen(false)}
+              />
+              <button 
+                type="button" 
+                className="search-toggle-btn"
+                onClick={() => setIsSearchOpen(!isSearchOpen)}
+                aria-label="Toggle Search"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <Link href="/products" className="btn-gold d-hide-mob">Request Quote</Link>
           
           <button 
             className={`mob-menu-btn ${isMobMenuOpen ? 'active' : ''}`}
@@ -57,6 +100,23 @@ export default function Header() {
             <span></span>
             <span></span>
           </button>
+        </div>
+      </div>
+
+      {/* Mobile Search Overlay */}
+      <div className={`mob-search-overlay ${isSearchOpen ? 'active' : ''}`}>
+        <div className="container">
+          <form onSubmit={handleSearchSubmit}>
+            <input 
+              type="text" 
+              placeholder="What are you looking for?"
+              value={localSearch}
+              onChange={(e) => setLocalSearch(e.target.value)}
+              autoFocus
+            />
+            <button type="submit" className="mob-search-submit">Search</button>
+            <button type="button" className="mob-search-close" onClick={() => setIsSearchOpen(false)}>✕</button>
+          </form>
         </div>
       </div>
       
