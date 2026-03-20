@@ -2,17 +2,19 @@
 import Link from "next/link";
 import { solutions } from "@/data/solutions";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 // ── CORRECT commercial kitchen equipment images for each category ──
 const categoryImages = {
-  'Supermarket Refrigeration': '/images/cat_supermarket_1774019357742.png',
-  'Bar & Wine': '/images/cat_bar_wine_1774019378045.png',
-  'Coffee Machines': '/images/cat_coffee_1774019398053.png',
-  'Countertop Displays': '/images/cat_countertop_displays_1774019445051.png',
-  'Dishwashers': '/images/cat_dishwashers_1774019465265.png',
-  'Medical Freezers': '/images/cat_medical_freezers_1774019484882.png',
-  'Lincat Ovens': '/images/cat_lincat_ovens_1774019519401.png',
-  'Lincat Countertop': '/images/cat_lincat_countertop_1774019536265.png',
-  'Fryers': '/images/cat_fryers_1774019554653.png',
+  'Supermarket Refrigeration': `${basePath}/images/cat_supermarket_1774019357742.png`,
+  'Bar & Wine': `${basePath}/images/cat_bar_wine_1774019378045.png`,
+  'Coffee Machines': `${basePath}/images/cat_coffee_1774019398053.png`,
+  'Countertop Displays': `${basePath}/images/cat_countertop_displays_1774019445051.png`,
+  'Dishwashers': `${basePath}/images/cat_dishwashers_1774019465265.png`,
+  'Medical Freezers': `${basePath}/images/cat_medical_freezers_1774019484882.png`,
+  'Lincat Ovens': `${basePath}/images/cat_lincat_ovens_1774019519401.png`,
+  'Lincat Countertop': `${basePath}/images/cat_lincat_countertop_1774019536265.png`,
+  'Fryers': `${basePath}/images/cat_fryers_1774019554653.png`,
   'Bake-Off Ovens': 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=800',
   'Bakery Tools': 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=800',
   'Blast Chillers': 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800',
