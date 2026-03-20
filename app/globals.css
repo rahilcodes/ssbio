@@ -2412,8 +2412,56 @@ header {
   .page-hero p { font-size: 0.95rem !important; }
 }
 
-/* ═══════════════════════════════
-/* END */
+/* ── Mobile Menu Overlay ── */
+.mob-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  z-index: 990;
+}
+
+/* ── Mobile Menu Active State ── */
+@media (max-width: 960px) {
+  .nav-menu.mob-active {
+    display: flex !important;
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: var(--dark-bg);
+    flex-direction: column;
+    padding: 2.5rem 1.5rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+    z-index: 995;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .nav-menu.mob-active .nav-link {
+    font-size: 1rem;
+    color: white;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .mob-menu-contact {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .mob-menu-contact p {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
 /* ═══════════════════════════════
    TOUCH UX (all mobile)
 ═══════════════════════════════ */
@@ -2424,98 +2472,3 @@ header {
   * { -webkit-tap-highlight-color: rgba(212,175,55,0.15); }
   a:active, button:active { opacity: 0.76; transform: scale(0.98); transition: all 0.1s; }
 }
-
-  /* 1. Global Bounds & Spacing */
-  body, html {
-    overflow-x: hidden;
-    width: 100%;
-  }
-
-  /* 2. Sleek Mobile Header */
-  .header-inner {
-    padding: 0.75rem 0 !important;
-    gap: 0.5rem;
-  }
-  .logo-box {
-    width: 34px !important;
-    height: 34px !important;
-    font-size: 1rem !important;
-  }
-  .logo-name strong { font-size: 1.05rem !important; }
-  .logo-name span { display: none !important; } /* Hide subtitle for space */
-  .contact-info { display: none !important; } /* Hide phone text, keep button */
-  .header-right .btn-gold {
-    padding: 10px 16px !important;
-    font-size: 0.75rem !important;
-  }
-
-  /* 3. Hero Section */
-  .hero {
-    padding: 6rem 0 4rem !important;
-  }
-  .hero-pill {
-    font-size: 0.65rem !important;
-    padding: 6px 14px !important;
-    white-space: normal !important;
-    text-align: center;
-  }
-  .hero-inner h1 {
-    font-size: 2.3rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 1rem !important;
-  }
-  .hero-inner p {
-    font-size: 1rem !important;
-    padding: 0 0.5rem !important;
-  }
-  .hero-btns {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    width: 100% !important;
-    max-width: 400px;
-    margin: 2rem auto !important;
-    gap: 1rem !important;
-  }
-  .hero-btns a {
-    width: 100% !important;
-    text-align: center !important;
-    padding: 14px !important;
-  }
-
-  /* 4. Grids (Solutions & Categories) */
-  .section-head h2 {
-    font-size: 2rem !important;
-  }
-  .sol-card {
-    height: auto !important;
-  }
-  .sol-img-wrap {
-    height: 220px !important;
-  }
-  .sol-body {
-    padding: 1.5rem !important;
-  }
-  .sol-body h3 {
-    font-size: 1.3rem !important;
-  }
-  .cat-card {
-    height: 240px !important; /* Cap excessive height */
-  }
-  .cat-name {
-    font-size: 1.4rem !important;
-  }
-
-  /* 5. Final CTA Alignment */
-  .cta-inner h2 {
-    font-size: 2.2rem !important;
-  }
-  .cta-btns {
-    flex-direction: column !important;
-    align-items: stretch !important;
-  }
-  .cta-btns a {
-    width: 100% !important;
-    text-align: center;
-  }
-}
-
