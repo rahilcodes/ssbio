@@ -2181,3 +2181,102 @@ header {
   transform: translateY(-3px);
   box-shadow: 0 15px 25px rgba(197, 168, 128, 0.4);
 }
+
+/* ══════════════════════════════════════════════════════
+   WORLD-CLASS MOBILE OPTIMIZATION (Smartphones)
+══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* 1. Global Bounds & Spacing */
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* 2. Sleek Mobile Header */
+  .header-inner {
+    padding: 0.75rem 0 !important;
+    gap: 0.5rem;
+  }
+  .logo-box {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 1rem !important;
+  }
+  .logo-name strong { font-size: 1.05rem !important; }
+  .logo-name span { display: none !important; } /* Hide subtitle for space */
+  .contact-info { display: none !important; } /* Hide phone text, keep button */
+  .header-right .btn-gold {
+    padding: 10px 16px !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* 3. Hero Section */
+  .hero {
+    padding: 6rem 0 4rem !important;
+  }
+  .hero-pill {
+    font-size: 0.65rem !important;
+    padding: 6px 14px !important;
+    white-space: normal !important;
+    text-align: center;
+  }
+  .hero-inner h1 {
+    font-size: 2.3rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+  .hero-inner p {
+    font-size: 1rem !important;
+    padding: 0 0.5rem !important;
+  }
+  .hero-btns {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 400px;
+    margin: 2rem auto !important;
+    gap: 1rem !important;
+  }
+  .hero-btns a {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 14px !important;
+  }
+
+  /* 4. Grids (Solutions & Categories) */
+  .section-head h2 {
+    font-size: 2rem !important;
+  }
+  .sol-card {
+    height: auto !important;
+  }
+  .sol-img-wrap {
+    height: 220px !important;
+  }
+  .sol-body {
+    padding: 1.5rem !important;
+  }
+  .sol-body h3 {
+    font-size: 1.3rem !important;
+  }
+  .cat-card {
+    height: 240px !important; /* Cap excessive height */
+  }
+  .cat-name {
+    font-size: 1.4rem !important;
+  }
+
+  /* 5. Final CTA Alignment */
+  .cta-inner h2 {
+    font-size: 2.2rem !important;
+  }
+  .cta-btns {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .cta-btns a {
+    width: 100% !important;
+    text-align: center;
+  }
+}
+
