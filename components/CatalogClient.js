@@ -92,6 +92,7 @@ export default function CatalogClient({ initialProducts, categories, brands }) {
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [view, setView] = useState("grid");
   const [initialized, setInitialized] = useState(false);
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
   const { searchQuery } = useSearch();
 
   // Read URL params on mount to pre-apply brand/category filters
@@ -104,6 +105,22 @@ export default function CatalogClient({ initialProducts, categories, brands }) {
     if (catParam) setSelectedCategories([catParam]);
     setInitialized(true);
   }, [initialized]);
+
+  // Handle body scroll lock
+  useEffect(() => {
+    if (showMobileFilters) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [showMobileFilters]);
+
+  // Close filters on any selection (optional, but good for mobile UX flow)
+  const handleFilterChange = (type, value) => {
+    if (type === 'cat') toggleCategory(value);
+    if (type === 'brand') toggleBrand(value);
+  };
 
   const filteredProducts = useMemo(() => {
     let result = initialProducts;
@@ -145,15 +162,14 @@ export default function CatalogClient({ initialProducts, categories, brands }) {
 
       <div className="container catalog-layout">
         {/* ── SIDEBAR ── */}
-        <aside className="catalog-sidebar">
+        <aside className={`catalog-sidebar ${showMobileFilters ? 'mob-open' : ''}`}>
           <div className="sidebar-card">
             <div className="sidebar-header">
               <h4>Filters</h4>
-              {activeFilters > 0 && (
-                <button className="clear-btn" onClick={clearAll}>
-                  Clear {activeFilters}
-                </button>
-              )}
+              <div className="sidebar-header-right">
+                {activeFilters > 0 && <button className="clear-btn" onClick={clearAll}>Clear All</button>}
+                <button className="mob-filter-close" onClick={() => setShowMobileFilters(false)}>✕</button>
+              </div>
             </div>
 
             <div className="filter-group">
@@ -161,7 +177,7 @@ export default function CatalogClient({ initialProducts, categories, brands }) {
               <div className="filter-list">
                 {categories.map(c => (
                   <label key={c} className={`filter-item ${selectedCategories.includes(c) ? 'active' : ''}`}>
-                    <input type="checkbox" checked={selectedCategories.includes(c)} onChange={() => toggleCategory(c)} />
+                    <input type="checkbox" checked={selectedCategories.includes(c)} onChange={() => handleFilterChange('cat', c)} />
                     <span className="filter-check" />
                     <span className="filter-text">{c}</span>
                   </label>
@@ -174,12 +190,19 @@ export default function CatalogClient({ initialProducts, categories, brands }) {
               <div className="filter-list">
                 {brands.map(b => (
                   <label key={b} className={`filter-item ${selectedBrands.includes(b) ? 'active' : ''}`}>
-                    <input type="checkbox" checked={selectedBrands.includes(b)} onChange={() => toggleBrand(b)} />
+                    <input type="checkbox" checked={selectedBrands.includes(b)} onChange={() => handleFilterChange('brand', b)} />
                     <span className="filter-check" />
                     <span className="filter-text">{b}</span>
                   </label>
                 ))}
               </div>
+            </div>
+
+            {/* Mobile-only results button */}
+            <div className="mob-filter-footer">
+              <button className="btn-gold w-full" onClick={() => setShowMobileFilters(false)}>
+                Show {filteredProducts.length} Results
+              </button>
             </div>
           </div>
         </aside>
@@ -192,9 +215,17 @@ export default function CatalogClient({ initialProducts, categories, brands }) {
               <span> {filteredProducts.length === 1 ? 'product' : 'products'} found</span>
               {activeFilters > 0 && <span className="filter-badge">{activeFilters} filter{activeFilters > 1 ? 's' : ''} active</span>}
             </div>
-            <div className="view-toggles">
-              <button className={`view-btn ${view === 'grid' ? 'active' : ''}`} onClick={() => setView('grid')} title="Grid view">⊞</button>
-              <button className={`view-btn ${view === 'list' ? 'active' : ''}`} onClick={() => setView('list')} title="List view">≡</button>
+            
+            <div className="toolbar-actions">
+              <button className="mob-filter-toggle" onClick={() => setShowMobileFilters(true)}>
+                <span className="icon">⚙️</span> Filters
+                {activeFilters > 0 && <span className="count">{activeFilters}</span>}
+              </button>
+
+              <div className="view-toggles">
+                <button className={`view-btn ${view === 'grid' ? 'active' : ''}`} onClick={() => setView('grid')} title="Grid view">⊞</button>
+                <button className={`view-btn ${view === 'list' ? 'active' : ''}`} onClick={() => setView('list')} title="List view">≡</button>
+              </div>
             </div>
           </div>
 
@@ -212,6 +243,10 @@ export default function CatalogClient({ initialProducts, categories, brands }) {
           )}
         </div>
       </div>
+
+      {/* Mobile Sidebar Overlay overlay */}
+      {showMobileFilters && <div className="mob-sidebar-overlay" onClick={() => setShowMobileFilters(false)} />}
     </div>
+
   );
 }
